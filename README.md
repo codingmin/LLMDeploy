@@ -1,32 +1,32 @@
 # 简介
 
-通过TensorRT C++ API部署RestNet50模型，可以通过本地图片和本地视频设备，输入图片进行分类输出结果。
+通过TensorRT C++ API部署ResNet50模型，可通过本地图片和本地视频设备输入图片。
 
 # 快速运行
 
-1、安装依赖相关依赖
+1、环境及相关依赖
 
-- Cuda：Driver，CUDAToolkit，
-- TensorRT
-- OpenCV
-- CMake
+- Ubuntu 22.04.5 LTS
+
+- Cuda Driver 580.178.04
+- CUDA Toolkit 12.8
+- TensorRT 10.16.1.11-1
+- OpenCV 4.5.4
+- CMake 3.22.1
 
 2、下载代码
 
-``` git clone https://github.com/codingmin/LLMDeploy.git
+```git
+gitgit clone https://github.com/codingmin/LLMDeploy.git
 ```
 
-
-
-3、从huggingface上下载模型
+3、huggingface上下载模型
 
 ```git
 git clone https://huggingface.co/onnx-community/resnet-50-ONNX
 ```
 
-
-
-4、进入代码目录之后，修改main函数中代码，之后编译和运行
+4、进入代码目录之后，**修改main函数中代码为本地相关路径或者设备**，编译和运行
 
 ```bash
 mkdir build 
@@ -42,10 +42,6 @@ Loading model from: model.onnx
 fishOne.jpg: Predicted class index: 392;predicted class name:  rock beauty, Holocanthus tricolor
 /dev/video0: Predicted class index: 593;predicted class name:  harmonica, mouth organ, harp
 ```
-
-
-
-
 
 # 参考
 
