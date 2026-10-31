@@ -27,10 +27,10 @@ std::vector<float> ModelDeployHelper::PreprocessImage(const std::string& strImag
     {
         throw std::runtime_error("Failed to read image: " + strImagePath);
     }
-    return PostprocessOutput(img, targetH, targetW);
+    return PreprocessImage(img, targetH, targetW);
 }
 
- std::vector<float> ModelDeployHelper::PostprocessOutput(cv::Mat& img,int targetH, int targetW,bool normalize)
+ std::vector<float> ModelDeployHelper::PreprocessImage(cv::Mat& img,int targetH, int targetW,bool normalize)
  {
     // resize
     cv::resize(img, img, cv::Size(targetW, targetH));

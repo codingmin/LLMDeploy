@@ -12,9 +12,9 @@ public:
 
     static cv::Mat ReadImageFromVideoDevice(const std::string& strVideoDevicePath);
 
-    static std::vector<float> PostprocessOutput(cv::Mat& input,int inputH, int inputW,bool normalize=true);
+    static std::vector<float> PreprocessImage(cv::Mat& input,int targetH, int targetW,bool normalize=true);
 
-    static std::vector<float> PreprocessImage(const std::string& strImagePath, int inputH, int inputW);
+    static std::vector<float> PreprocessImage(const std::string& strImagePath, int targetH, int targetW);
 
     static int GetMaxValueIndex(const std::vector<float>& vecFloatPrediction);
 };

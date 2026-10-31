@@ -17,7 +17,7 @@
 2、下载代码
 
 ```git
-gitgit clone https://github.com/codingmin/LLMDeploy.git
+git clone https://github.com/codingmin/LLMDeploy.git
 ```
 
 3、huggingface上下载模型

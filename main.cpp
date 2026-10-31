@@ -6,7 +6,7 @@
 #include<memory>
 
 
-void outputResult(const std::vector<float>& vecFloatResultResNet)
+void OutputResult(const std::vector<float>& vecFloatResultResNet)
 {
     const int iIndex = ModelDeployHelper::GetMaxValueIndex(vecFloatResultResNet);
     std::cout << "Predicted class index: " << iIndex;
@@ -19,17 +19,17 @@ void TestLocalImage(const std::string&ImagePath,const std::shared_ptr<IModelDepl
     std::vector<float> vecFloatPreprocessedImage = ModelDeployHelper::PreprocessImage(strImagePath,224,224);
     std::vector<float> vecFloatResultResNet = pModelDeploy->Inference(vecFloatPreprocessedImage, nvinfer1::Dims{4, {1, 3, 224, 224}});
     std::cout << ImagePath << ": ";
-    outputResult(vecFloatResultResNet);
+    OutputResult(vecFloatResultResNet);
 }
 
 void TestVideoDevice(const std::string& strVideoDevicePath,const std::shared_ptr<IModelDeploy>& pModelDeploy)
 {
     cv::Mat img = ModelDeployHelper::ReadImageFromVideoDevice(strVideoDevicePath);
     imwrite("captured_frame.jpg", img);
-    std::vector<float> vecFloatPreprocessedImage = ModelDeployHelper::PostprocessOutput(img,224,224);
+    std::vector<float> vecFloatPreprocessedImage = ModelDeployHelper::PreprocessImage(img,224,224);
     std::vector<float> vecFloatResultResNet = pModelDeploy->Inference(vecFloatPreprocessedImage, nvinfer1::Dims{4, {1, 3, 224, 224}});
     std::cout << strVideoDevicePath << ": ";
-    outputResult(vecFloatResultResNet);
+    OutputResult(vecFloatResultResNet);
 }
 
 int main(int argc,char* argv[])
