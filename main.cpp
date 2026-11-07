@@ -5,7 +5,6 @@
 #include<string>
 #include<memory>
 
-
 void OutputResult(const std::vector<float>& vecFloatResultResNet)
 {
     const int iIndex = ModelDeployHelper::GetMaxValueIndex(vecFloatResultResNet);
@@ -18,7 +17,7 @@ void TestLocalImage(const std::string&ImagePath,const std::shared_ptr<IModelDepl
     const std::string strImagePath = "fishOne.jpg";
     std::vector<float> vecFloatPreprocessedImage = ModelDeployHelper::PreprocessImage(strImagePath,224,224);
     std::vector<float> vecFloatResultResNet = pModelDeploy->Inference(vecFloatPreprocessedImage, nvinfer1::Dims{4, {1, 3, 224, 224}});
-    std::cout << ImagePath << ": ";
+    std::cout << "vecFloatResultResNet.size(): " << vecFloatResultResNet.size() << "; ImagePath: " << ImagePath << ": ";
     OutputResult(vecFloatResultResNet);
 }
 
@@ -45,11 +44,16 @@ int main(int argc,char* argv[])
     std::shared_ptr<IModelDeploy> pModelDeploy = std::make_shared<ModelDeployTensorRT>();
     pModelDeploy->LoadModel(strModelPath);
 
-    const std::string strImagePath = "fishOne.jpg";
-    TestLocalImage(strImagePath,pModelDeploy);
 
-    const std::string strDevicePath = "/dev/video0";
-    TestVideoDevice(strDevicePath,pModelDeploy);
+    const int iRepeatCount = 5;
+    const std::string strImagePath = "fishOne.jpg";
+    for(int i = 0; i < iRepeatCount; ++i)
+    {
+        TestLocalImage(strImagePath,pModelDeploy);
+    }
+
+    // const std::string strDevicePath = "/dev/video0";
+    // TestVideoDevice(strDevicePath,pModelDeploy);
 
     return 0;
 }
