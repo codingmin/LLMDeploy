@@ -1,3 +1,4 @@
+#include <chrono>
 #include <memory>
 #include <string>
 
@@ -48,8 +49,18 @@ int main(int argc, char* argv[]) {
 
   const int iRepeatCount = 5;
   const std::string strImagePath = "fishOne.jpg";
+  double totalTimeMs = 0.0;
   for (int i = 0; i < iRepeatCount; ++i) {
+    const auto t0 = std::chrono::steady_clock::now();
     TestLocalImage(strImagePath, pModelDeploy);
+    const double elapsedMs =
+        std::chrono::duration<double, std::milli>(std::chrono::steady_clock::now() - t0).count();
+    totalTimeMs += elapsedMs;
+    std::cout << "[Timing] TestLocalImage #" << i << ": " << elapsedMs << " ms" << std::endl;
+  }
+  if (iRepeatCount > 0) {
+    std::cout << "[Timing] average: " << totalTimeMs / iRepeatCount << " ms over " << iRepeatCount
+              << " runs" << std::endl;
   }
 
   // const std::string strDevicePath = "/dev/video0";
