@@ -1,5 +1,5 @@
-#ifndef LABEL_STRING_H
-#define LABEL_STRING_H
+#ifndef LLMDEPLOY_LABEL_STRING_H_
+#define LLMDEPLOY_LABEL_STRING_H_
 
 #include <string>
 #include <vector>
@@ -1009,4 +1009,4 @@ const std::vector<std::string> imagenet_zh_labels = {
     " bolete",
     " ear, spike, capitulum",
     " toilet tissue, toilet paper, bathroom tissue"};
-#endif  // LABEL_STRING_H
+#endif

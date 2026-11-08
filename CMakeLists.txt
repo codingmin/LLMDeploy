@@ -22,7 +22,6 @@ add_executable(ModelDeployTensorRT
     src/LabelString.h
 )
 
-# 测试图片拷贝到 build 目录，保持相对路径可运行
 file(COPY ${CMAKE_SOURCE_DIR}/assets/fishOne.jpg DESTINATION ${CMAKE_BINARY_DIR})
 
 target_link_libraries(ModelDeployTensorRT 
