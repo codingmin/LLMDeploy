@@ -11,11 +11,19 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 find_package(CUDA REQUIRED)
 include_directories(${CUDA_INCLUDE_DIRS})
 
-add_executable(ModelDeployTensorRT 
-    ModelDeployTensorRT.cpp
-    ModelDeployHelper.cpp
-    main.cpp
+add_executable(ModelDeployTensorRT
+    src/main.cpp
+    src/IModelDeploy.h
+    src/ModelDeployTensorRT.cpp
+    src/ModelDeployTensorRT.h
+    src/ModelDeployHelper.cpp
+    src/ModelDeployHelper.h
+    src/Logger.h
+    src/LabelString.h
 )
+
+# 测试图片拷贝到 build 目录，保持相对路径可运行
+file(COPY ${CMAKE_SOURCE_DIR}/assets/fishOne.jpg DESTINATION ${CMAKE_BINARY_DIR})
 
 target_link_libraries(ModelDeployTensorRT 
 ${OpenCV_LIBS} 
