@@ -185,7 +185,8 @@ const std::vector<std::string> imagenet_zh_labels = {
     " Scottish deerhound, deerhound",
     " Weimaraner",
     " Staffordshire bullterrier, Staffordshire bull terrier",
-    " American Staffordshire terrier, Staffordshire terrier, American pit bull terrier, pit bull terrier",
+    " American Staffordshire terrier, Staffordshire terrier, American pit bull terrier, pit bull "
+    "terrier",
     " Bedlington terrier",
     " Border terrier",
     " Kerry blue terrier",
@@ -244,7 +245,7 @@ const std::vector<std::string> imagenet_zh_labels = {
     " Doberman, Doberman pinscher",
     " miniature pinscher",
     " Greater Swiss Mountain dog",
-    " Bernese mountain dog", // 228 ✅ 伯恩山犬
+    " Bernese mountain dog",  // 228 ✅ 伯恩山犬
     " Appenzeller",
     " EntleBucher",
     " boxer",
@@ -324,7 +325,8 @@ const std::vector<std::string> imagenet_zh_labels = {
     " cicada, cicala",
     " leafhopper",
     " lacewing, lacewing fly",
-    " dragonfly, darning needle, devil's darning needle, sewing needle, snake feeder, snake doctor, mosquito hawk, skeeter hawk",
+    " dragonfly, darning needle, devil's darning needle, sewing needle, snake feeder, snake "
+    "doctor, mosquito hawk, skeeter hawk",
     " damselfly",
     " admiral",
     " ringlet, ringlet butterfly",
@@ -354,7 +356,8 @@ const std::vector<std::string> imagenet_zh_labels = {
     " water buffalo, water ox, Asiatic buffalo, Bubalus bubalis",
     " bison",
     " ram, tup",
-    " bighorn, bighorn sheep, cimarron, Rocky Mountain bighorn, Rocky Mountain sheep, Ovis canadensis",
+    " bighorn, bighorn sheep, cimarron, Rocky Mountain bighorn, Rocky Mountain sheep, Ovis "
+    "canadensis",
     " ibex, Capra ibex",
     " hartebeest",
     " impala, Aepyceros melampus",
@@ -416,7 +419,8 @@ const std::vector<std::string> imagenet_zh_labels = {
     " amphibian, amphibious vehicle",
     " analog clock",
     " apron",
-    " ashcan, trash can, garbage can, wastebin, waste bin, ash bin, ash-bin, ashbin, dustbin, trash barrel, trash bin",
+    " ashcan, trash can, garbage can, wastebin, waste bin, ash bin, ash-bin, ashbin, dustbin, "
+    "trash barrel, trash bin",
     " assault rifle, assault gun",
     " backpack, back pack, knapsack, packsack, rucksack, haversack",
     " bakery, bakeshop, bakehouse",
@@ -482,7 +486,8 @@ const std::vector<std::string> imagenet_zh_labels = {
     " carpenter's kit, tool kit",
     " carton",
     " car wheel",
-    " cash machine, automated teller machine, automatic teller machine, automated teller, automatic teller, ATM",
+    " cash machine, automated teller machine, automatic teller machine, automated teller, "
+    "automatic teller, ATM",
     " cassette",
     " cassette player",
     " castle",
@@ -1003,6 +1008,5 @@ const std::vector<std::string> imagenet_zh_labels = {
     " hen-of-the-woods, hen of the woods, Polyporus frondosus, Grifola frondosa",
     " bolete",
     " ear, spike, capitulum",
-    " toilet tissue, toilet paper, bathroom tissue"
-};
-#endif // LABEL_STRING_H
+    " toilet tissue, toilet paper, bathroom tissue"};
+#endif  // LABEL_STRING_H
