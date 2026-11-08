@@ -1,0 +1,11 @@
+# 基于Google风格，配合 CPP_STYLE_GUIDE.md 使用
+# 注意：对存量 tab 缩进文件运行会产生大 diff，建议只格式化新文件或统一迁移时全量执行
+---
+BasedOnStyle: Google
+IndentWidth: 2
+UseTab: Never
+ColumnLimit: 100
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+SortIncludes: true
